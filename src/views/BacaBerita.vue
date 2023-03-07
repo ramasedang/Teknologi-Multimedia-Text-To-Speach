@@ -2,34 +2,8 @@
     <div>
         <h4>{{ selectedVoice }}</h4>
         <div class="card">
-            <h2>Convert Text to Speech</h2>
+            <h2>Baca berita CNN</h2>
             <h5>Listen to those words!</h5>
-            <p class="lead mt-4">Select Voice</p>
-
-            <!-- Select Menu for Voice -->
-            <select id="voices" class="form-select" v-model="selectedVoice">
-                <option :value="index" v-for="(voice, index) in voices" :key="voice.name" :data-name="voice.name">{{ voice.name }} + {{ voice.lang
-                }}</option>
-            </select>
-
-            <!-- Range Slliders for Volume, Rate & Pitch -->
-            <div class="d-flex mt-4">
-                <div>
-                    <p class="lead">Volume</p>
-                    <input type="range" min="0" max="2" v-model="speachOptions.volume" step="0.1" id="volume" />
-                    <span id="volume-label" class="ms-2">{{ speachOptions.volume }}</span>
-                </div>
-                <div class="mx-5">
-                    <p class="lead">Rate</p>
-                    <input type="range" min="0.1" max="10" v-model="speachOptions.rate" id="rate" step="0.1" />
-                    <span id="rate-label" class="ms-2">{{ speachOptions.rate }}</span>
-                </div>
-                <div>
-                    <p class="lead">Pitch</p>
-                    <input type="range" min="0" max="2" v-model="speachOptions.pitch" step="0.1" id="pitch" />
-                    <span id="pitch-label" class="ms-2">{{ speachOptions.pitch }}</span>
-                </div>
-            </div>
 
             <!-- Text Area  for the User to Type -->
             <textarea class="form-control mt-5" v-model="textInput" cols="30" rows="10"
