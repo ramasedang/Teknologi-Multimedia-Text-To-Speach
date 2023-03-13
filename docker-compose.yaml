@@ -1,9 +1,10 @@
-version: "3"
+version: '3'
 
 services:
-  vue-app:
-    build: .
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5173:5173"
-    volumes:
-      - .:/app
+      - "5173:80"
+    restart: always
