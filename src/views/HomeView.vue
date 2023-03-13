@@ -1,15 +1,29 @@
 <template >
-    <div>
-        <div class="card">
-            <h2>Convert Text to Speech</h2>
+    <div class="mt-10 container text-white">
+        <div class="p-4">
+            <h2 class="text-center text-sm-start">Convert Text to Speech</h2>
             <h5>Listen to those words!</h5>
-            <p class="lead mt-4">Select Voice</p>
+            <h4 class="lead mt-4">Select Voice</h4>
+            
+            
+            <!-- <div>
+                
+                <div class="form-check card mb-1 form-check-inline">
+                    <input class="form-check-input" type="radio" />
+                    <label class="form-check-label" for="flexRadioDefault1">Male</label>
+                </div>
+                <div class="form-check card mb-1 form-check-inline">
+                    <input class="form-check-input" type="radio" />
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div> -->
+
 
             <!-- Select Menu for Voice -->
-            <select id="voices" class="form-select"></select>
+            <select id="voices" class="form-select">{ getVoiceList }</select>
 
             <!-- Range Slliders for Volume, Rate & Pitch -->
-            <div class="d-flex mt-4">
+            <!-- <div class="d-flex mt-4">
                 <div>
                     <p class="lead">Volume</p>
                     <input type="range" min="0" max="1" value="1" step="0.1" id="volume" />
@@ -25,17 +39,19 @@
                     <input type="range" min="0" max="1" value="1" step="0.1" id="pitch" />
                     <span id="pitch-label" class="ms-2">1</span>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Text Area  for the User to Type -->
-            <textarea class="form-control mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
+            <label for="text" class="form-label mt-5 h4">Input Text</label>
+            <textarea class="form-control" cols="30" rows="10" placeholder="Type here..."></textarea>
 
             <!-- Control Buttons -->
-            <div class="mb-5">
-                <button id="start" class="btn btn-success mt-5 me-3">Start</button>
-                <button id="pause" class="btn btn-warning mt-5 me-3">Pause</button>
-                <button id="resume" class="btn btn-info mt-5 me-3">Resume</button>
-                <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+            <div class="m-auto">
+                <button id="start" class="btn btn-outline-primary mt-5 me-3">Start</button> 
+                <font-awesome-icon icon="fa-solid fa-pause" />
+                <button id="pause" class="btn btn-outline-warning mt-5 me-3">Pause</button>
+                <button id="resume" class="btn btn-outline-info mt-5 me-3">Resume</button>
+                <button id="cancel" class="btn btn-outline-danger mt-5 me-3">Cancel</button>
             </div>
         </div>
     </div>
@@ -73,7 +89,11 @@ export default {
 <style >
 .card {
     padding: 1rem 1.5rem;
-    border-radius: 7px;
+    border-radius: 10px;
 
 }
+.container {
+    margin-top: 20px;
+}
+
 </style>
