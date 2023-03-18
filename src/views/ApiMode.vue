@@ -1,6 +1,6 @@
 <template >
-    <div>
-        <div class="card">
+    <div class="container text-white m-auto">
+        <div class="p-4">
             <h4>{{ fileText }}</h4>
             <h2>Convert Text to Speech</h2>
             <h5>Listen to those words!</h5>
@@ -14,22 +14,25 @@
             </select>
 
             <!-- Text Area  for the User to Type -->
-            <textarea class="form-control mt-5" v-model="textInput" cols="30" rows="10"
-                placeholder="Type here..."></textarea>
+            <div class="mt-4">
+                <label for="text-input">Input Text</label>
+                <textarea class="form-control mt-1" v-model="textInput" cols="30" rows="10"
+                    placeholder="Type here..."></textarea>
+            </div>
 
-            <div>
+            <div class="mt-4">
                 <label class="form-label" for="customFile">Masukan file .txt</label>
                 <input type="file" ref="fileInput" @change="onFileChange" class="form-control" id="customFile"
                     accept=".txt" />
             </div>
             <!-- Control Buttons -->
-            <div class="mb-5">
-                <button id="start" class="btn btn-success mt-5 me-3" @click="get_sound()">Start</button>
-                <button id="pause" class="btn btn-warning mt-5 me-3" @click="pause_audio()">Pause</button>
-                <button id="resume" class="btn btn-info mt-5 me-3" @click="resume_audio()">Resume</button>
-                <button id="cancel" class="btn btn-danger mt-5 me-3" @click="stop_audio()">Cancel</button>
+            <div class="m-auto">
+                <button id="start" class="btn btn-outline-success mt-5 me-3" @click="get_sound()">Start</button>
+                <button id="pause" class="btn btn-outline-warning mt-5 me-3" @click="pause_audio()">Pause</button>
+                <button id="resume" class="btn btn-outline-info mt-5 me-3" @click="resume_audio()">Resume</button>
+                <button id="cancel" class="btn btn-outline-danger mt-5 me-3" @click="stop_audio()">Cancel</button>
             </div>
-            <div>
+            <div class="m-auto mt-3">
                 <h4>Hasil</h4>
                 <audio controls :src="audioBase64" autolpay></audio>
             </div>
@@ -116,15 +119,15 @@ export default {
             });
         },
         async stop_audio() {
-            console.log('test');
+            console.log('stopping');
             await audio.pause()
         },
         async pause_audio() {
-            console.log('stop');
+            console.log('pausing');
             await audio.pause()
         },
         async resume_audio() {
-            console.log('stop');
+            console.log('resuming');
             await audio.play()
         },
         onFileChange(e) {
@@ -155,9 +158,7 @@ export default {
 }
 </script>
 <style >
-.card {
-    padding: 1rem 1.5rem;
-    border-radius: 7px;
-
+.container {
+    margin-top: 20px;
 }
 </style>

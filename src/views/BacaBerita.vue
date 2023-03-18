@@ -1,6 +1,6 @@
 <template >
-    <div>
-        <div class="card">
+    <div class="container text-white m-auto">
+        <div>
             <h4>{{ fileText }}</h4>
             <h2>Baca Berita CNN Indonesia</h2>
             <h5>Listen to those words!</h5>
@@ -158,9 +158,7 @@ export default {
 }
 </script>
 <style >
-.card {
-    padding: 1rem 1.5rem;
-    border-radius: 7px;
-
+.container {
+    margin-top: 20px;
 }
 </style>
